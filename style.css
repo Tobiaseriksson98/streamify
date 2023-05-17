@@ -1,48 +1,23 @@
 :root {
-  --section-gap: 8rem;
-  --section-gap-inner: calc( var(--seciton-gap) * 0.75 )
   --gap-xl: 4rem;
   --gap-l: 3rem;
   --gap-m: 2rem;
   --gap-s: 1rem;
   --border-radius: 0px;
-  --color-dark: #222;
-  --color-dark-200: #333;
-  --color-dark-300: #444;
-  --color-dark-500: #888;
-  --color-dark-600: #999;
-  --color-dark-700: #b5b5b5;
-  --color-dark-800: #d5d5d5;
-  --color-dark-900: #f1f1f1;
-  --color-accent: #009fbb;
-  --color-accent-200: #009fbb;
-  --color-accent-300: #009fbb;
-  --color-accent-400: #009fbb;
-  --color-accent-500: #009fbb;
-  --color-accent-600: #009fbb;
-  --color-accent-700: #009fbb;
-  --color-accent-800: #009fbb;
-  --color-accent-900: #009fbb;
-  --color-light: #efead8;
-  --color-light-200: #efead8;
-  --color-light-300: #efead8;
-  --color-light-400: #efead8;
-  --color-light-500: #efead8;
-  --color-light-600: #efead8;
-  --color-light-700: #efead8;
-  --color-light-800: #efead8;
-  --color-light-900: #efead8;
-  --font-sans: "Arial", sans-serif;
-  --font-serif: "Georgia", serif;
+  --color-dark: #000;
+  --color-dark-333: #333;
+  --color-dark-444: #444;
+  --color-dark-555: #555;
+  --color-dark-666: #666;
+  --color-dark-777: #777;
+  --color-dark-888: #888;
+  --color-dark-999: #999;
+  --color-light: #fff;
+  --color-accent: lightgreen;
+  --font-sans: "gelato-luxe", sans-serif;
+  --font-serif: "poppins", serif;
   --line-height: 1.5;
-  --font-scale: 1.25;
-  --font-size: 1.125rem;
-  --font-size-1: var(--font-size);
-  --font-size-2: calc( var(--font-size-1) * var(--font-scale));
-  --font-size-3: calc( var(--font-size-2) * var(--font-scale));
-  --font-size-4: calc( var(--font-size-3) * var(--font-scale));
-  --font-size-5: calc( var(--font-size-4) * var(--font-scale));
-  --font-size-6: calc( var(--font-size-5) * var(--font-scale));
+  --transition: all 0.3s;
 }
 
 * {
@@ -52,22 +27,25 @@
 body {
   margin: 0;
   padding: 0;
+  background-image: url(assets/images/pexels-cottonbro-studio-5650695.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  scroll-behavior: smooth;
 }
 
 img {
   max-width: 100%;
 }
 
-body {
-  font-family: var(--font-sans);
-}
-
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
 }
 
 p {
   line-height: var(--line-height);
+  font-family: var(--font-serif);
 }
 
 a {
@@ -83,20 +61,209 @@ li {
   line-height: var(--line-height);
 }
 
-.test {
-  background-color: blue;
-  color: var(--color-light);
-  padding: 1rem 2rem;
-  border: 0;
-  border-radius: 2rem;
-  font-size: 1rem;
-  font-weight: 700;
-  display: inline-block;
-  text-decoration: none;
+.hero {
+  position: relative;
+  min-height: 760px;
 }
-.test:hover {
-  background-color: var(--color-accent);
+.hero__title {
+  font-weight: 400;
+  font-size: 225px;
   color: var(--color-light);
+  text-shadow: 5px 5px #333;
+  margin-top: 0;
+  max-height: 150px;
+}
+.hero__title-login {
+  margin-bottom: 12rem;
+  max-height: 150px;
+}
+.hero__text {
+  font-weight: 700;
+  font-style: italic;
+  color: var(--color-light);
+  font-size: 30px;
+  max-width: 500px;
+  margin: auto;
+}
+.hero__text span {
+  font-family: var(--font-sans);
+  text-shadow: 3px 3px 3px var(--color-dark);
+}
+.hero__form {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.hero__form ::placeholder {
+  color: var(--color-dark);
+  font-size: 1rem;
+  font-family: var(--font-serif);
+}
+.hero__input {
+  min-height: 2.5rem;
+  width: 350px;
+  border-radius: 30px;
+  text-align: center;
+  border: 1px solid var(--color-dark);
+  transition: var(--transition);
+}
+.hero__input:hover {
+  background-color: transparent;
+  border: 1px solid var(--color-light);
+  color: var(--color-light);
+}
+.hero__input:hover::placeholder {
+  color: var(--color-light);
+  font-size: 1rem;
+}
+.hero__input:hover:focus::placeholder {
+  color: transparent;
+}
+.hero__button, .checkbox-container .signin {
+  width: 350px;
+  height: 3rem;
+  background-color: var(--color-light);
+  border: 1px solid var(--color-dark);
+  border-radius: 30px;
+  margin-top: 6rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.hero__button:hover, .checkbox-container .signin:hover {
+  background-color: transparent;
+  border: 1px solid var(--color-light);
+}
+.hero__button:hover .hero__link, .checkbox-container .signin:hover .hero__link {
+  color: var(--color-light);
+}
+.hero__link {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--color-dark);
+}
+.hero__signup {
+  color: var(--color-dark-999);
+  font-weight: 700;
+}
+.hero__signup--link {
+  color: var(--color-light);
+}
+.hero__signup--link:hover {
+  color: var(--color-accent);
+}
+.hero-login {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.terms {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  color: var(--color-light);
+  bottom: 0;
+  left: 0;
+}
+.terms a {
+  color: var(--color-dark-777);
+}
+
+.forgot-password {
+  font-size: 12px;
+  color: var(--color-light);
+  margin-top: 2rem;
+  font-family: var(--font-serif);
+  cursor: pointer;
+}
+
+.other-options {
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  position: relative;
+}
+.other-options__all {
+  transition: var(--transition);
+  border-radius: 30px;
+  width: 250px;
+  height: 2.5rem;
+  font-size: 1rem;
+  font-family: "poppins";
+  border: 1px solid var(--color-dark);
+  cursor: pointer;
+}
+.other-options__all:hover {
+  background-color: transparent;
+  border: 1px solid var(--color-light);
+  color: var(--color-light);
+}
+.other-options__facebook, .other-options__twitter, .other-options__gmail {
+  transition: var(--transition);
+  border-radius: 30px;
+  width: 250px;
+  height: 2rem;
+  font-size: 1rem;
+  font-family: "poppins";
+  border: 1px solid var(--color-dark);
+  display: flex;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  opacity: 0;
+  cursor: pointer;
+}
+.other-options__facebook svg, .other-options__twitter svg, .other-options__gmail svg {
+  width: 25px;
+}
+.other-options__facebook:hover, .other-options__twitter:hover, .other-options__gmail:hover {
+  background-color: transparent;
+  border: 1px solid var(--color-light);
+  color: var(--color-light);
+}
+.other-options__facebook--visible, .other-options__twitter--visible, .other-options__gmail--visible {
+  visibility: visible;
+  transition: var(--transition);
+  opacity: 1;
+}
+
+.checkbox-container {
+  max-width: 300px;
+  margin: auto;
+  padding-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkbox-container .checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.checkbox-container .checkbox-text {
+  color: var(--color-light);
+  font-family: var(--font-serif);
+  font-size: 14px;
+  padding: 4px 2px 0 4px;
+}
+.checkbox-container input {
+  width: 30px;
+  height: 20px;
+  accent-color: lightgreen;
+}
+.checkbox-container .signin {
+  max-width: 100px;
+  max-height: 30px;
+  margin-top: 0;
+  font-family: var(--font-serif);
+  padding-top: 3px;
+}
+.checkbox-container .signin:hover {
+  color: var(--color-light);
+  background-color: rgba(144, 238, 144, 0.4);
 }
 
 /*# sourceMappingURL=style.css.map */

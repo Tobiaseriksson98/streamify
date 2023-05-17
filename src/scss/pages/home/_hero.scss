@@ -1,0 +1,227 @@
+.hero {
+    position: relative;
+    min-height: 760px;   
+
+    &__title {
+        font-weight: 400;
+        font-size: 225px;
+        color: var(--color-light);
+        text-shadow: 5px 5px #333;
+        margin-top: 0;
+        max-height:150px;
+        
+        &-login {
+            margin-bottom: 12rem;
+            max-height: 150px;
+            }
+        }
+    
+    &__text {
+        font-weight: 700;
+        font-style: italic;
+        color: var(--color-light);
+        font-size: 30px;
+        max-width: 500px;
+        margin: auto;
+        
+            span {
+                font-family: var(--font-sans);
+                text-shadow: 3px 3px 3px var(--color-dark);
+            }
+        }
+    
+    &__form {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        ::placeholder {
+            color: var(--color-dark);
+            font-size: 1rem;
+            font-family: var(--font-serif);
+            }
+        }
+        
+    &__input {
+        min-height: 2.5rem;
+        width: 350px;
+        border-radius: 30px;
+        text-align: center;
+        border: 1px solid var(--color-dark);
+        transition: var(--transition);
+        &:hover {
+            background-color: transparent;
+            border: 1px solid var(--color-light);
+            color: var(--color-light);
+            &::placeholder {
+                color: var(--color-light);
+                font-size: 1rem;
+                }
+                    &:focus {
+                        &::placeholder {
+                            color: transparent;
+                    }
+                }
+            }
+        }
+    
+    &__button {
+        width: 350px;
+        height: 3rem;
+        background-color: var(--color-light);
+        border: 1px solid var(--color-dark);
+        border-radius: 30px;
+        margin-top: 6rem;
+        transition: var(--transition);
+        cursor: pointer;
+        &:hover {
+            background-color: transparent;
+            border: 1px solid var(--color-light);
+                .hero__link {
+                    color: var(--color-light);
+                }
+            }
+        }
+    
+    &__link {
+        font-family: var(--font-serif);
+        font-size: 1rem;
+        color: var(--color-dark);
+        }
+    
+    &__signup {
+        color: var(--color-dark-999);
+        font-weight: 700;
+            &--link {
+                color: var(--color-light);
+                &:hover {
+                    color: var(--color-accent);
+                }
+            }
+        }
+    
+        &-login {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .terms {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 3px;
+        color: var(--color-light);
+        bottom: 0;
+        left: 0;    
+        a {
+            color: var(--color-dark-777);
+        }
+    }
+    .forgot-password {
+        font-size: 12px;
+        color: var(--color-light);
+        margin-top: 2rem;
+        font-family: var(--font-serif);
+        cursor: pointer;
+    }
+   
+    
+    .other-options {
+        display: grid;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+        position: relative;
+
+        &__all {
+            transition: var(--transition);
+            border-radius: 30px;
+            width: 250px;
+            height: 2.5rem;
+            font-size: 1rem;
+            font-family: 'poppins';
+            border: 1px solid var(--color-dark);
+            cursor: pointer;
+            &:hover {
+                background-color: transparent;
+                border: 1px solid var(--color-light);
+                color: var(--color-light);
+                
+            }
+        }
+        
+        &__facebook, &__twitter, &__gmail {
+            transition: var(--transition);
+            border-radius: 30px;
+            width: 250px;
+            height: 2rem;
+            font-size: 1rem;
+            font-family: 'poppins';
+            border: 1px solid var(--color-dark);
+            display: flex;
+            visibility: hidden;
+            justify-content: center;
+            align-items: center;
+            gap: 0.8rem;
+            opacity: 0;
+            svg {
+                width: 25px;
+            }
+            cursor: pointer;
+            &:hover {
+                background-color: transparent;
+                border: 1px solid var(--color-light);
+                color: var(--color-light);
+                
+            }
+
+            &--visible {
+                visibility: visible;
+                transition: var(--transition);
+                opacity: 1;
+            }
+        }
+    }
+
+    .checkbox-container {
+        max-width: 300px;
+        margin: auto;
+        padding-top: .5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .checkbox {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+        }
+
+        .checkbox-text {
+            color: var(--color-light);
+            font-family: var(--font-serif);
+            font-size: 14px;
+            padding: 4px 2px 0 4px;
+        }
+
+        input {
+            width: 30px;
+            height: 20px;
+            accent-color: lightgreen;
+        }
+
+        .signin {
+            @extend .hero__button;
+            max-width: 100px;
+            max-height: 30px;
+            margin-top: 0;
+            font-family: var(--font-serif);
+            padding-top: 3px;
+            &:hover {
+                color: var(--color-light);
+                background-color: rgb(144, 238, 144, 0.4);
+            }
+        }
+    }
+
+    

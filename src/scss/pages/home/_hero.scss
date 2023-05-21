@@ -92,9 +92,10 @@
     &__signup {
         color: var(--color-dark-999);
         font-weight: 700;
-            &--link {
-                color: var(--color-light);
-                &:hover {
+        &--link {
+            color: var(--color-light);
+            &:hover {
+                    transition: var(--transition);
                     color: var(--color-accent);
                 }
             }
@@ -138,7 +139,7 @@
             transition: var(--transition);
             border-radius: 30px;
             width: 250px;
-            height: 2.5rem;
+            height: 3rem;
             font-size: 1rem;
             font-family: 'poppins';
             border: 1px solid var(--color-dark);
@@ -155,7 +156,7 @@
             transition: var(--transition);
             border-radius: 30px;
             width: 250px;
-            height: 2rem;
+            height: 2.5rem;
             font-size: 1rem;
             font-family: 'poppins';
             border: 1px solid var(--color-dark);
@@ -163,10 +164,11 @@
             visibility: hidden;
             justify-content: center;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.5rem;
             opacity: 0;
             svg {
                 width: 25px;
+                padding-bottom: 0.2rem;
             }
             cursor: pointer;
             &:hover {
@@ -182,6 +184,27 @@
                 opacity: 1;
             }
         }
+
+        &__facebook {
+            &:hover {
+                background-color: rgb(66, 103, 178, 0.5);
+
+            }
+        }
+
+        &__twitter {
+            &:hover {
+                background-color: rgb(29, 161, 242, 0.5);
+            }
+        }
+
+        &__gmail {
+            &:hover {
+                background-color: rgb(219, 68, 55, 0.5);
+            }
+        }
+
+
     }
 
     .checkbox-container {
@@ -191,37 +214,118 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .checkbox {
-            display: flex;
-            align-items: center;
-            justify-content: left;
-        }
 
-        .checkbox-text {
-            color: var(--color-light);
-            font-family: var(--font-serif);
-            font-size: 14px;
-            padding: 4px 2px 0 4px;
-        }
 
-        input {
-            width: 30px;
-            height: 20px;
-            accent-color: lightgreen;
-        }
+
+        /* The switch - the box around the slider */
+    .switch {
+        font-size: 16px;
+        position: relative;
+        display: inline-block;
+        width: 3.5rem;
+        height: 2em;
+    }
+    
+    /* Hide default HTML checkbox */
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        inset: 0;
+        background: #e8e8e8;
+        border-radius: 50px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .slider:before {
+        position: absolute;
+        content: "";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2em;
+        width: 2em;
+        inset: 0;
+        background-color: var(--color-light);
+        border-radius: 50px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .switch input:checked + .slider {
+        background: rgb(46, 223, 46);
+    }
+    
+    .switch input:focus + .slider {
+        box-shadow: 0 0 1px #0974f1;
+    }
+    
+    .switch input:checked + .slider:before {
+        transform: translateX(1.6em);
+    }
+
 
         .signin {
-            @extend .hero__button;
-            max-width: 100px;
-            max-height: 30px;
-            margin-top: 0;
             font-family: var(--font-serif);
-            padding-top: 3px;
+            position: relative;
+            overflow: hidden;
+            height: 2rem;
+            padding: 0 2rem;
+            border-radius: 1.5rem;
+            background-color: var(--color-light);
+            background-size: 400%;
+            color: var(--color-dark);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
             &:hover {
                 color: var(--color-light);
-                background-color: rgb(144, 238, 144, 0.4);
             }
+
+      
         }
+
+
+        .signin:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .signin-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .signin::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            width: 100%;
+            height: inherit;
+            border-radius: inherit;
+            background: linear-gradient(
+                82.3deg,
+                rgb(93, 233, 128) 10.8%,
+                rgb(39, 151, 2) 94.3%
+            );
+            transition: all 0.4s;
+        }
+    }
+
+    .remember-me-text {
+        color: var(--color-light);
+        font-family: var(--font-serif);
+        font-size: 14px;
+        padding-top: 5px;
+        padding-right: 5px;
     }
 
     

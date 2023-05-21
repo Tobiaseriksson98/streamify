@@ -7,7 +7,9 @@
     <title>Streamify - Stream your favorite music here</title>
     <link rel="stylesheet" href="https://use.typekit.net/nnn0huk.css">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/Ssssss-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="js/otherOptions.js" defer></script>
+    <script src="js/rememberButton.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,17 +17,20 @@
 
 
     <div class="hero hero-login">
-        <h1 class="hero__title hero__title-login">Streamify</h1>
+        <h1 class="hero__title hero__title-login animate__animated animate__fadeInDownBig">Streamify</h1>
         <form action="" class="hero__form">
             <input type="text" class="hero__input" placeholder="Email or username">
             <input type="password" class="hero__input" placeholder="Password">
         </form>
         <div class="checkbox-container">
-            <label class="checkbox">
+            <label class="switch">
                 <input type="checkbox">
-                <div class="checkbox-text">Remember me</div>
+                <span class="slider"></span>
             </label>
-            <button class="signin">Sign in</button>
+            <span class="remember-me-text">Remember me</span>
+            <button class="signin">
+                <span class="signin-content">Sign in</span>
+            </button>
         </div>
         <div class="forgot-password">Forgot your password?</div>
         <div class="other-options">

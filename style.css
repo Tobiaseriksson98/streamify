@@ -120,7 +120,7 @@ li {
 .hero__input:hover:focus::placeholder {
   color: transparent;
 }
-.hero__button, .checkbox-container .signin {
+.hero__button {
   width: 350px;
   height: 3rem;
   background-color: var(--color-light);
@@ -130,11 +130,11 @@ li {
   transition: var(--transition);
   cursor: pointer;
 }
-.hero__button:hover, .checkbox-container .signin:hover {
+.hero__button:hover {
   background-color: transparent;
   border: 1px solid var(--color-light);
 }
-.hero__button:hover .hero__link, .checkbox-container .signin:hover .hero__link {
+.hero__button:hover .hero__link {
   color: var(--color-light);
 }
 .hero__link {
@@ -150,6 +150,7 @@ li {
   color: var(--color-light);
 }
 .hero__signup--link:hover {
+  transition: var(--transition);
   color: var(--color-accent);
 }
 .hero-login {
@@ -189,7 +190,7 @@ li {
   transition: var(--transition);
   border-radius: 30px;
   width: 250px;
-  height: 2.5rem;
+  height: 3rem;
   font-size: 1rem;
   font-family: "poppins";
   border: 1px solid var(--color-dark);
@@ -204,7 +205,7 @@ li {
   transition: var(--transition);
   border-radius: 30px;
   width: 250px;
-  height: 2rem;
+  height: 2.5rem;
   font-size: 1rem;
   font-family: "poppins";
   border: 1px solid var(--color-dark);
@@ -212,12 +213,13 @@ li {
   visibility: hidden;
   justify-content: center;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.5rem;
   opacity: 0;
   cursor: pointer;
 }
 .other-options__facebook svg, .other-options__twitter svg, .other-options__gmail svg {
   width: 25px;
+  padding-bottom: 0.2rem;
 }
 .other-options__facebook:hover, .other-options__twitter:hover, .other-options__gmail:hover {
   background-color: transparent;
@@ -229,6 +231,15 @@ li {
   transition: var(--transition);
   opacity: 1;
 }
+.other-options__facebook:hover {
+  background-color: rgba(66, 103, 178, 0.5);
+}
+.other-options__twitter:hover {
+  background-color: rgba(29, 161, 242, 0.5);
+}
+.other-options__gmail:hover {
+  background-color: rgba(219, 68, 55, 0.5);
+}
 
 .checkbox-container {
   max-width: 300px;
@@ -237,33 +248,97 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* The switch - the box around the slider */
+  /* Hide default HTML checkbox */
+  /* The slider */
 }
-.checkbox-container .checkbox {
+.checkbox-container .switch {
+  font-size: 16px;
+  position: relative;
+  display: inline-block;
+  width: 3.5rem;
+  height: 2em;
+}
+.checkbox-container .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.checkbox-container .slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #e8e8e8;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.checkbox-container .slider:before {
+  position: absolute;
+  content: "";
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
+  height: 2em;
+  width: 2em;
+  inset: 0;
+  background-color: var(--color-light);
+  border-radius: 50px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.checkbox-container .checkbox-text {
-  color: var(--color-light);
-  font-family: var(--font-serif);
-  font-size: 14px;
-  padding: 4px 2px 0 4px;
+.checkbox-container .switch input:checked + .slider {
+  background: rgb(46, 223, 46);
 }
-.checkbox-container input {
-  width: 30px;
-  height: 20px;
-  accent-color: lightgreen;
+.checkbox-container .switch input:focus + .slider {
+  box-shadow: 0 0 1px #0974f1;
+}
+.checkbox-container .switch input:checked + .slider:before {
+  transform: translateX(1.6em);
 }
 .checkbox-container .signin {
-  max-width: 100px;
-  max-height: 30px;
-  margin-top: 0;
   font-family: var(--font-serif);
-  padding-top: 3px;
+  position: relative;
+  overflow: hidden;
+  height: 2rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background-color: var(--color-light);
+  background-size: 400%;
+  color: var(--color-dark);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
 }
 .checkbox-container .signin:hover {
   color: var(--color-light);
-  background-color: rgba(144, 238, 144, 0.4);
+}
+.checkbox-container .signin:hover::before {
+  transform: scaleX(1);
+}
+.checkbox-container .signin-content {
+  position: relative;
+  z-index: 1;
+}
+.checkbox-container .signin::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(82.3deg, rgb(93, 233, 128) 10.8%, rgb(39, 151, 2) 94.3%);
+  transition: all 0.4s;
+}
+
+.remember-me-text {
+  color: var(--color-light);
+  font-family: var(--font-serif);
+  font-size: 14px;
+  padding-top: 5px;
+  padding-right: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

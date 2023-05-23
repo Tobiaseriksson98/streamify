@@ -11,7 +11,7 @@ const otherOptions = () => {
         theOption3.classList.toggle('other-options__gmail--visible')
     }
 
-    otherOptionsButton.addEventListener('mouseover', togglePopup)
+    otherOptionsButton.addEventListener('click', togglePopup)
 
 }
 

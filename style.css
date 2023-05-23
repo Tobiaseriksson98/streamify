@@ -63,7 +63,7 @@ li {
 
 .hero {
   position: relative;
-  min-height: 760px;
+  min-height: 100vh;
 }
 .hero__title {
   font-weight: 400;
@@ -99,6 +99,19 @@ li {
   color: var(--color-dark);
   font-size: 1rem;
   font-family: var(--font-serif);
+}
+.hero__form .password-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero__form .password-input:hover .material-symbols-outlined {
+  color: var(--color-accent);
+}
+.hero__form .password-input span {
+  position: absolute;
+  margin-left: 300px;
+  cursor: pointer;
 }
 .hero__input {
   min-height: 2.5rem;
@@ -155,6 +168,7 @@ li {
 }
 .hero-login {
   background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
 }
 
 .terms {
@@ -339,6 +353,52 @@ li {
   font-size: 14px;
   padding-top: 5px;
   padding-right: 5px;
+}
+
+@media screen and (max-width: 878px) {
+  .hero__title {
+    font-size: 185px;
+    padding-top: 50px;
+  }
+  .terms {
+    padding-bottom: 60px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .hero__title {
+    font-size: 130px;
+  }
+  .hero__title-login {
+    padding-top: 100px;
+  }
+  .hero__text {
+    font-size: 20px;
+    max-width: 350px;
+  }
+  .terms {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .hero__title {
+    font-size: 100px;
+  }
+  .hero__title-login {
+    padding-top: 150px;
+  }
+  .hero__text {
+    font-size: 16px;
+  }
+  .terms {
+    font-size: 8px;
+  }
+  .other-options__facebook, .other-options__twitter, .other-options__gmail {
+    height: 1.8rem;
+    font-size: 0.5rem;
+  }
+  .other-options__facebook svg, .other-options__twitter svg, .other-options__gmail svg {
+    width: 15px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

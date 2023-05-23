@@ -1,6 +1,7 @@
+
 .hero {
     position: relative;
-    min-height: 760px;   
+    min-height: 100vh;   
 
     &__title {
         font-weight: 400;
@@ -39,6 +40,23 @@
             color: var(--color-dark);
             font-size: 1rem;
             font-family: var(--font-serif);
+            }
+
+            .password-input {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:hover {
+                    .material-symbols-outlined {
+                        color: var(--color-accent);
+                    }
+                }
+
+                span {
+                    position: absolute;
+                    margin-left: 300px;
+                    cursor: pointer;
+                }
             }
         }
         
@@ -103,6 +121,7 @@
     
         &-login {
             background-color: rgba(0, 0, 0, 0.5);
+            height: 100vh;
         }
     }
 
@@ -327,5 +346,56 @@
         padding-top: 5px;
         padding-right: 5px;
     }
+
+    @media screen and ( max-width: 878px ) {
+        .hero__title {
+            font-size: 185px;
+            padding-top: 50px;
+        }
+
+        .terms {
+            padding-bottom: 60px;
+        }
+    }
+
+    @media screen and ( max-width: 640px ) {
+        .hero__title {
+            font-size: 130px;
+            &-login {
+                padding-top: 100px;
+            }
+        }
+        .hero__text {
+            font-size: 20px;
+            max-width: 350px;
+        }
+
+        .terms {
+            font-size: 10px;
+        }
+    }
+
+    @media screen and ( max-width: 480px ) {
+        .hero__title {
+            font-size: 100px;
+            &-login {
+                padding-top: 150px;
+            }
+        }
+        .hero__text {
+            font-size: 16px;
+        }
+        .terms {
+            font-size: 8px;
+        }
+        .other-options__facebook, .other-options__twitter, .other-options__gmail {
+            height: 1.8rem;
+            font-size: 0.5rem;
+            svg {
+                width: 15px;
+            }
+        }
+    }
+
 
     
